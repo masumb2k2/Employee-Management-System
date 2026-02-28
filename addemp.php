@@ -61,13 +61,15 @@
 
                         <div class="row row-space">
                             <div class="col-2">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">First Name</label>
                                 <div class="input-group">
-                                     <input class="input--style-1" type="text" placeholder="First Name" name="firstName" required="required">
+                                     <input class="input--style-1" type="text" placeholder="Enter first name" name="firstName" required="required">
                                 </div>
                             </div>
                             <div class="col-2">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Last Name</label>
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Last Name" name="lastName" required="required">
+                                    <input class="input--style-1" type="text" placeholder="Enter last name" name="lastName" required="required">
                                 </div>
                             </div>
                         </div>
@@ -76,22 +78,23 @@
 
 
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Email</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="email" placeholder="Email" name="email" required="required">
+                            <input class="input--style-1" type="email" placeholder="Enter email address" name="email" required="required">
                         </div>
-                        <p>Birthday</p>
                         <div class="row row-space">
                             <div class="col-2">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Birthday</label>
                                 <div class="input-group">
-                                    <input class="input--style-1" type="date" placeholder="BIRTHDATE" name="birthday" required="required">
-                                   
+                                    <input class="input--style-1" type="date" placeholder="Select birthdate" name="birthday" required="required">
                                 </div>
                             </div>
                             <div class="col-2">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Gender</label>
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="gender">
-                                            <option disabled="disabled" selected="selected">GENDER</option>
+                                            <option disabled="disabled" selected="selected">Select Gender</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                             <option value="Other">Other</option>
@@ -102,33 +105,40 @@
                             </div>
                         </div>
                         
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Contact Number</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="Contact Number" name="contact" required="required" >
+                            <input class="input--style-1" type="number" placeholder="Enter contact number" name="contact" required="required" >
                         </div>
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">NID (National ID)</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="NID" name="nid" required="required">
+                            <input class="input--style-1" type="number" placeholder="Enter NID" name="nid" required="required">
                         </div>
 
                         
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Address</label>
                          <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Address" name="address" required="required">
+                            <input class="input--style-1" type="text" placeholder="Enter address" name="address" required="required">
                         </div>
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Department</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Department" name="dept" required="required">
+                            <input class="input--style-1" type="text" placeholder="Enter department" name="dept" required="required">
                         </div>
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Degree</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Degree" name="degree" required="required">
+                            <input class="input--style-1" type="text" placeholder="Enter degree" name="degree" required="required">
                         </div>
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Salary</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="Salary" name="salary">
+                            <input class="input--style-1" type="number" placeholder="Enter salary" name="salary">
                         </div>
 
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Profile Picture</label>
                         <div class="input-group">
-                            <input class="input--style-1" type="file" placeholder="file" name="file">
+                            <input class="input--style-1" type="file" placeholder="Upload profile picture" name="file">
                         </div>
 
 
