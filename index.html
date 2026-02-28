@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Employee Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f7f9fc;
+        font-family: "Montserrat", sans-serif;
+        color: #333;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 12px 20px 10px 40px;
+        height: 60px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        display: inline;
+        font-family: "Lobster", cursive;
+        font-weight: 400;
+        font-size: 32px;
+        float: left;
+        margin-top: 5px;
+        margin-right: 20px;
+      }
+
+      nav ul {
+        display: inline;
+        padding: 0px;
+        float: right;
+        margin-top: 8px;
+      }
+
+      nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        color: white;
+        float: left;
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 8px 14px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      #navli {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .homered {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 8px 14px;
+        border-radius: 5px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .homeblack:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 8px 14px;
+        border-radius: 5px;
+        transform: translateY(-2px);
+      }
+
+      .divider {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        height: 5px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 80px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        animation: slideDown 0.8s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Lobster", cursive;
+        font-size: 56px;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        opacity: 0.95;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 14px 35px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-primary {
+        background: white;
+        color: #667eea;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 80px 40px;
+        background: white;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        color: #333;
+      }
+
+      .section-title span {
+        color: #667eea;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-top: 4px solid #667eea;
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border-top-color: #764ba2;
+      }
+
+      .feature-icon {
+        font-size: 48px;
+        color: #667eea;
+        margin-bottom: 20px;
+      }
+
+      .feature-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      /* About Section */
+      .about {
+        padding: 80px 40px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-text h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .about-text h2 span {
+        color: #667eea;
+      }
+
+      .about-text p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      .about-list {
+        list-style: none;
+        margin: 30px 0;
+      }
+
+      .about-list li {
+        padding: 10px 0;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .about-list li::before {
+        content: "✓";
+        color: #667eea;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .about-image {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 38px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .cta-section p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        opacity: 0.95;
+      }
+
+      /* Footer */
+      footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 40px;
+        text-align: center;
+        line-height: 1.8;
+      }
+
+      footer p {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      footer a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #764ba2;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          padding: 8px 15px;
+        }
+
+        header h1 {
+          font-size: 24px;
+        }
+
+        nav ul li {
+          margin-left: 10px;
+        }
+
+        nav ul li a {
+          font-size: 12px;
+          padding: 6px 10px;
+        }
+
+        .hero {
+          padding: 50px 20px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .features {
+          padding: 50px 20px;
+        }
+
+        .section-title {
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .about-image {
+          height: 300px;
+        }
+
+        .about-text h2 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Employee Management System</h1>
+        <ul id="navli">
+          <li><a class="homered" href="index.html">HOME</a></li>
+          <li><a class="homeblack" href="contact.html">CONTACT</a></li>
+          <li><a class="homeblack" href="elogin.html">LOG IN</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Employee Management System</h1>
+        <p>
+          Streamline your workforce management with our modern, efficient, and
+          intuitive platform
+        </p>
+        <div class="cta-buttons">
+          <a href="elogin.html" class="btn btn-primary">
+            <i class="fas fa-sign-in-alt"></i> Employee Login
+          </a>
+          <a href="alogin.html" class="btn btn-secondary">
+            <i class="fas fa-user-shield"></i> Admin Login
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 class="section-title">Our <span>Features</span></h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Employee Management</h3>
+          <p>
+            Easily manage employee information, track performance, and maintain
+            comprehensive employee records
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3>Task Assignment</h3>
+          <p>
+            Assign projects and tasks efficiently to your team members and track
+            their progress in real-time
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Leave Management</h3>
+          <p>
+            Handle leave requests, approvals, and track employee attendance with
+            an intuitive dashboard
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3>Salary Management</h3>
+          <p>
+            Manage payroll, calculate salaries, and generate payslips with
+            comprehensive reporting
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Analytics & Reports</h3>
+          <p>
+            Generate detailed reports and analytics to make data-driven
+            decisions about your workforce
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Security</h3>
+          <p>
+            Enterprise-grade security with role-based access control and data
+            encryption
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About <span>Our System</span></h2>
+          <p>
+            The Employee Management System is designed to help organizations
+            streamline their HR operations and improve workforce productivity.
+          </p>
+          <ul class="about-list">
+            <li>Centralized employee database</li>
+            <li>Streamlined leave management</li>
+            <li>Project and task tracking</li>
+            <li>Automated payroll processing</li>
+            <li>Comprehensive reporting tools</li>
+            <li>User-friendly interface</li>
+          </ul>
+          <p>
+            Whether you're a small team or a large enterprise, our system scales
+            with your needs and helps you manage your workforce efficiently.
+          </p>
+        </div>
+        <div class="about-image">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to get started?</h2>
+      <p>
+        Join thousands of companies using our Employee Management System to
+        optimize their operations
+      </p>
+      <a href="elogin.html" class="btn btn-primary">
+        <i class="fas fa-rocket"></i> Get Started Now
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Employee Management System. All rights reserved.</p>
+      <p>
+        <a href="contact.html">Contact Us</a> | <a href="index.html">Home</a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Login | Employee Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        font-family: "Montserrat", sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 12px 20px 10px 40px;
+        height: 60px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      header h1 {
+        display: inline;
+        font-family: "Lobster", cursive;
+        font-weight: 400;
+        font-size: 32px;
+        float: left;
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: inline;
+        padding: 0px;
+        float: right;
+        margin-top: 8px;
+      }
+
+      nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        color: white;
+        float: left;
+        margin-left: 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+
+      #navli {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+      }
+
+      .homered {
+        background-color: #667eea;
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+
+      .homeblack:hover {
+        background-color: #667eea;
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+
+      .divider {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        height: 5px;
+      }
+
+      .login-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .login-card {
+        background: white;
+        width: 100%;
+        max-width: 420px;
+        padding: 50px 40px 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.6s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 45px;
+        color: white;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      .login-card h1 {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .login-subtitle {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+      }
+
+      .form-group input::placeholder {
+        color: #999;
+      }
+
+      .form-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        font-size: 13px;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .remember-me input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: #667eea;
+      }
+
+      .remember-me label {
+        cursor: pointer;
+        color: #666;
+        margin: 0;
+        font-weight: 500;
+      }
+
+      .forgot-password {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .forgot-password:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+      }
+
+      .login-btn:active {
+        transform: translateY(0);
+      }
+
+      .signup-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .signup-link a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+
+      .signup-link a:hover {
+        color: #764ba2;
+      }
+
+      .divider-line {
+        text-align: center;
+        margin: 20px 0;
+        color: #ddd;
+        position: relative;
+      }
+
+      .divider-line::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: #e0e0e0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 480px) {
+        header {
+          padding: 8px 15px;
+        }
+
+        header h1 {
+          font-size: 24px;
+        }
+
+        nav ul li {
+          margin-left: 8px;
+        }
+
+        .login-card {
+          padding: 40px 25px 30px;
+          border-radius: 12px;
+        }
+
+        .login-card h1 {
+          font-size: 24px;
+        }
+
+        .form-options {
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Employee Management System</h1>
+        <ul id="navli">
+          <li><a class="homeblack" href="index.html">HOME</a></li>
+          <li><a class="homered" href="elogin.html">Employee Login</a></li>
+          <li><a class="homeblack" href="alogin.html">Admin Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="divider"></div>
+
+    <div class="login-container">
+      <div class="login-card">
+        <div class="avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <h1>Employee Login</h1>
+        <p class="login-subtitle">Welcome back! Please login to your account</p>
+
+        <form action="process/eprocess.php" method="POST">
+          <div class="form-group">
+            <label for="mailuid">Email Address</label>
+            <input
+              type="email"
+              id="mailuid"
+              name="mailuid"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input
+              type="password"
+              id="pwd"
+              name="pwd"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="reset.html" class="forgot-password">Forgot password?</a>
+          </div>
+
+          <button type="submit" name="login-submit" class="login-btn">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+
+        <div class="signup-link">
+          Don't have an account? Contact your administrator
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
