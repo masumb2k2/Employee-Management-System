@@ -68,7 +68,7 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `firstName`, `lastName`, `email`, `password`, `birthday`, `gender`, `contact`, `nid`, `address`, `dept`, `degree`, `pic`) VALUES
-(2, 'John', 'Smith', 'john@gmail.com', '1234', '2020-09-01', 'Male', '0999999999', 1, 'New York', 'IT', 'Waterboy', 'images/default.jpg'),
+(2, 'Mr.', 'Developer', 'dev@gmail.com', '1234', '2020-09-01', 'Male', '0999999999', 1, 'New York', 'IT', 'Waterboy', 'images/default.jpg'),
 (6, 'test', 'test', 'test@gmail.com', '1234', '2020-09-06', 'Male', '09998383737', 4, 'test', 'test', 'test', 'images/d.jpg');
 
 -- --------------------------------------------------------
