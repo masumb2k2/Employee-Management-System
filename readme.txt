@@ -30,7 +30,7 @@ user: admin@gmail.com
 pass: admin
 
 User
-user: john@gmail.com
+user: dev@gmail.com
 pass: 1234
 
 ****** https:1sourcecodr.blogspot.com ******
