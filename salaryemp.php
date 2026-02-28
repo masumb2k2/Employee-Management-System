@@ -12,7 +12,11 @@ $result = mysqli_query($conn, $sql);
 
 <html>
 <head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Salary Table | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleview.css">
 </head>
 <body>
@@ -35,11 +39,13 @@ $result = mysqli_query($conn, $sql);
 	</header>
 	 
 	<div class="divider"></div>
-	<div id="divimg">
-		
-	</div>
-	
-	<table>
+	<div class="page-wrapper">
+		<div class="card animate-slideup">
+			<div class="card-header">
+				<h2><i class="fas fa-money-bill-alt"></i> Employee Salary Table</h2>
+			</div>
+			<div class="card-body">
+				<table>
 			<tr>
 				<th align = "center">Emp. ID</th>
 				<th align = "center">Name</th>

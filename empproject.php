@@ -10,7 +10,11 @@
 
 <html>
 <head>
-	<title>Employee Panel | Employee Management System</title>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Employee Projects | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleview.css">
 </head>
 <body>
@@ -29,10 +33,13 @@
 	</header>
 	 
 	<div class="divider"></div>
-	<div id="divimg">
-
-
-		<table>
+	<div class="page-wrapper">
+		<div class="card animate-slideup">
+			<div class="card-header">
+				<h2><i class="fas fa-tasks"></i> My Assigned Projects</h2>
+			</div>
+			<div class="card-body">
+				<table>
 			<tr>
 
 				<th align = "center">Project ID</th>

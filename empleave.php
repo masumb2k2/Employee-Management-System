@@ -14,7 +14,11 @@ $result = mysqli_query($conn, $sql);
 
 <html>
 <head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Employee Leave | Admin Panel | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleview.css">
 </head>
 <body>
@@ -37,8 +41,13 @@ $result = mysqli_query($conn, $sql);
 	</header>
 	 
 	<div class="divider"></div>
-	<div id="divimg">
-		<table>
+	<div class="page-wrapper">
+		<div class="card animate-slideup">
+			<div class="card-header">
+				<h2><i class="fas fa-calendar-times"></i> Employee Leave Requests</h2>
+			</div>
+			<div class="card-body">
+				<table>
 			<tr>
 				<th>Emp. ID</th>
 				<th>Token</th>

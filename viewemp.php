@@ -12,7 +12,11 @@ $result = mysqli_query($conn, $sql);
 
 <html>
 <head>
-	<title>View Employee |  Admin Panel | Employee Management System</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>View Employees | Admin Panel | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleview.css">
 </head>
 <body>
@@ -34,6 +38,12 @@ $result = mysqli_query($conn, $sql);
 	
 	<div class="divider"></div>
 
+	<div class="page-wrapper">
+		<div class="card animate-slideup">
+			<div class="card-header">
+				<h2><i class="fas fa-users"></i> Employee List</h2>
+			</div>
+			<div class="card-body">
 		<table>
 			<tr>
 
@@ -72,11 +82,15 @@ $result = mysqli_query($conn, $sql);
 					echo "<td>".$employee['points']."</td>";
 
 					echo "<td><a href=\"edit.php?id=$employee[id]\">Edit</a> | <a href=\"delete.php?id=$employee[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
-
+					echo "</tr>";
 				}
-
-
 			?>
+		</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>			?>
 
 		</table>
 		

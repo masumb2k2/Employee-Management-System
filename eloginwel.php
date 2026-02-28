@@ -24,9 +24,12 @@ $result3 = mysqli_query($conn, $sql3);
 
 <html>
 <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Employee Panel | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleemplogin.css">
-	<link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat" rel="stylesheet">
 </head>
 <body>
 	
@@ -44,11 +47,14 @@ $result3 = mysqli_query($conn, $sql3);
 	</header>
 	 
 	<div class="divider"></div>
-	<div id="divimg">
-	<div>
-		<!-- <h2>Welcome <?php echo "$empName"; ?> </h2> -->
-
-		    	<h2 style="font-family: 'Montserrat', sans-serif; font-size: 25px; text-align: center;">Empolyee Leaderboard </h2>
+	<div class="page-wrapper">
+	<div class="animate-slideup">
+		<!-- Leaderboard Section -->
+		<div class="card">
+			<div class="card-header">
+				<h2><i class="fas fa-trophy"></i> Employee Leaderboard</h2>
+			</div>
+			<div class="card-body">
     	<table>
 
 			<tr bgcolor="#000">
@@ -77,10 +83,15 @@ $result3 = mysqli_query($conn, $sql3);
 				}
 
 
-			?>
+			</div>
+		</div>
 
-		</table>
-   
+		<!-- Due Projects Section -->
+		<div class="card">
+			<div class="card-header">
+				<h2><i class="fas fa-tasks"></i> Assigned Projects</h2>
+			</div>
+			<div class="card-body">   
     	<h2 style="font-family: 'Montserrat', sans-serif; font-size: 25px; text-align: center;">Due Projects</h2>
     	
 
@@ -100,12 +111,18 @@ $result3 = mysqli_query($conn, $sql3);
 					
 					echo "<td>".$employee1['pname']."</td>";
 					
-					echo "<td>".$employee1['duedate']."</td>";
+			</div>
+		</div>
 
-				}
-
-
-			?>
+		<!-- Leave Status Section -->
+		<div class="card">
+			<div class="card-header">
+				<h2><i class="fas fa-calendar-alt"></i> Leave Status</h2>
+			</div>
+			<div class="card-body">			<div class="card-header">
+				<h2><i class="fas fa-money-bill-wave"></i> Salary Status</h2>
+			</div>
+			<div class="card-body">			?>
 
 		</table>
 

@@ -39,8 +39,33 @@ $result = mysqli_query($conn, "UPDATE `employee` SET `firstName`='$firstname',`l
 }
 ?>
 
-
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Employee | Employee Management System</title>
+    <link href="modern.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Employee Management System</h1>
+            <ul id="navli">
+                <li><a class="homeblack" href="aloginwel.php">HOME</a></li>
+                <li><a class="homeblack" href="addemp.php">Add Employee</a></li>
+                <li><a class="homeblack" href="viewemp.php">View Employee</a></li>
+                <li><a class="homered" href="#">Edit Employee</a></li>
+                <li><a class="homeblack" href="alogin.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="divider"></div>
 
 <?php
 	$id = (isset($_GET['id']) ? $_GET['id'] : '');
@@ -103,82 +128,77 @@ $result = mysqli_query($conn, "UPDATE `employee` SET `firstName`='$firstname',`l
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Update Employee Info</h2>
-                    <form id = "registration" action="edit.php" method="POST">
+				<form id="registration" action="edit.php" method="POST">
 
+					<div class="row row-space">
+						<div class="col-2">
+							<div class="form-group">
+								<label>First Name</label>
+								<input type="text" name="firstName" value="<?php echo $firstname;?>" required>
+							</div>
+						</div>
+						<div class="col-2">
+							<div class="form-group">
+								<label>Last Name</label>
+								<input type="text" name="lastName" value="<?php echo $lastname;?>" required>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" name="email" value="<?php echo $email;?>" required>
+					</div>
                         <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                     <input class="input--style-1" type="text" name="firstName" value="<?php echo $firstname;?>" >
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1" type="text" name="lastName" value="<?php echo $lastname;?>">
-                                </div>
-                            </div>
-                        </div>
+						<div class="col-2">
+							<div class="form-group">
+								<label>Birthday</label>
+								<input type="text" name="birthday" value="<?php echo $birthday;?>">
+							</div>
+						</div>
+						<div class="col-2">
+							<div class="form-group">
+								<label>Gender</label>
+								<input type="text" name="gender" value="<?php echo $gender;?>">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Contact</label>
+						<input type="number" name="contact" value="<?php echo $contact;?>" required>
+					</div>
 
+					<div class="form-group">
+						<label>NID</label>
+						<input type="number" name="nid" value="<?php echo $nid;?>" required>
+					</div>
 
+					<div class="form-group">
+						<label>Address</label>
+						<input type="text" name="address" value="<?php echo $address;?>" required>
+					</div>
 
+					<div class="form-group">
+						<label>Department</label>
+						<input type="text" name="dept" value="<?php echo $dept;?>" required>
+					</div>
 
+					<div class="form-group">
+						<label>Degree</label>
+						<input type="text" name="degree" value="<?php echo $degree;?>" required>
+					</div>
 
-                        <div class="input-group">
-                            <input class="input--style-1" type="email"  name="email" value="<?php echo $email;?>">
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1" type="text" name="birthday" value="<?php echo $birthday;?>">
-                                   
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-									<input class="input--style-1" type="text" name="gender" value="<?php echo $gender;?>">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="input-group">
-                            <input class="input--style-1" type="number" name="contact" value="<?php echo $contact;?>">
-                        </div>
-
-                        <div class="input-group">
-                            <input class="input--style-1" type="number" name="nid" value="<?php echo $nid;?>">
-                        </div>
-
-                        
-                         <div class="input-group">
-                            <input class="input--style-1" type="text"  name="address" value="<?php echo $address;?>">
-                        </div>
-
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" name="dept" value="<?php echo $dept;?>">
-                        </div>
-
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" name="degree" value="<?php echo $degree;?>">
-                        </div>
-                        <input type="hidden" name="id" id="textField" value="<?php echo $id;?>" required="required"><br><br>
-                        <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit" name="update">Submit</button>
-                        </div>
-                        
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-     <!-- Jquery JS-->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script>
-   
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
-
-   
-    <script src="js/global.js"></script> -->
+					<input type="hidden" name="id" value="<?php echo $id;?>" required>
+					
+					<button class="btn btn--primary" type="submit" name="update"><i class="fas fa-save"></i> Update Employee</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

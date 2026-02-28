@@ -10,10 +10,14 @@
 
 <html>
 <head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Apply Leave | Employee Panel | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleapply.css">
 </head>
-<body bgcolor="#F0FFFF">
+<body>
 	
 	<header>
 		<nav>
@@ -29,13 +33,14 @@
 	</header>
 	 
 	<div class="divider"></div>
-	<div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-1">
-                <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">Apply Leave Form</h2>
-                    <form action="process/applyleaveprocess.php?id=<?php echo $id?>" method="POST">
+	<div class="page-wrapper">
+		<div class="animate-slideup">
+			<div class="card">
+				<div class="card-header">
+					<h2><i class="fas fa-calendar"></i> Apply for Leave</h2>
+				</div>
+				<div class="card-body">
+					<form action="process/applyleaveprocess.php?id=<?php echo $id?>" method="POST">
 
 
                         <div class="input-group">
@@ -125,7 +130,13 @@
 			?>
 
 
-		</table>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
 
 
 

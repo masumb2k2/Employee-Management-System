@@ -7,6 +7,9 @@
     <!-- Title Page-->
     <title>Add Employee | Employee Management System</title>
 
+    <!-- Modern CSS -->
+    <link href="modern.css" rel="stylesheet" media="all">
+
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -43,12 +46,14 @@
 
 
 
-    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-1">
-                <div class="card-heading"></div>
+    <div class="page-wrapper">
+        <div class="animate-slideup">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Add New Employee</h2>
+                </div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
+                    <h3 style="margin-bottom: 25px;">Employee Information</h3>
                     <form action="process/addempprocess.php" method="POST" enctype="multipart/form-data">
 
 

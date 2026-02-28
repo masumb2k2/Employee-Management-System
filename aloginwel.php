@@ -7,7 +7,11 @@ $result = mysqli_query($conn, $sql);
 
 <html>
 <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Admin Panel | Employee Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="modern.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="styleemplogin.css">
 </head>
 <body>
@@ -29,9 +33,13 @@ $result = mysqli_query($conn, $sql);
 	</header>
 	 
 	<div class="divider"></div>
-	<div id="divimg">
-		<h2 style="font-family: 'Montserrat', sans-serif; font-size: 25px; text-align: center;">Empolyee Leaderboard </h2>
-    	<table>
+	<div class="page-wrapper">
+		<div class="card animate-slideup">
+			<div class="card-header">
+				<h2><i class="fas fa-trophy"></i> Employee Leaderboard</h2>
+			</div>
+			<div class="card-body">
+		<table>
 
 			<tr bgcolor="#000">
 				<th align = "center">Seq.</th>
@@ -64,10 +72,11 @@ $result = mysqli_query($conn, $sql);
 		</table>
 
 		<div class="p-t-20">
-			<button class="btn btn--radius btn--green" type="submit" style="float: right; margin-right: 60px"><a href="reset.php" style="text-decoration: none; color: white"> Reset Points</button>
+			<a href="reset.php" class="btn btn--primary" style="float: right; margin-right: 20px"><i class="fas fa-redo"></i> Reset Points</a>
 		</div>
-
-		
+			</div>
+		</div>
+	</div>		
 	</div>
 </body>
 </html>
